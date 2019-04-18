@@ -1,0 +1,19 @@
+type Query {
+    myPets: [Pet]
+    petsById(id: Int): [Pet]
+    petsByFilter(filter: String): [Pet]
+}
+
+type Pet {
+    id: Int!
+    type: Animal!
+    name: String
+    age: Int
+}
+
+enum Animal {
+    DOG
+    CAT
+    BADGER
+    MAMMOTH
+}
