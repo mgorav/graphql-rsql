@@ -1,5 +1,5 @@
 type Query {
-    myPets: [Pet]
+    pets: [Pet]
     petsById(id: Int): [Pet]
     petsByFilter(filter: String): [Pet]
 }
