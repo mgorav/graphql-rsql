@@ -1,19 +1,25 @@
-type Query {
-    pets: [Pet]
-    petsById(id: Int): [Pet]
-    petsByFilter(filter: String): [Pet]
-}
-
-type Pet {
+type MyPet {
     id: Int!
-    type: Animal!
+    type: AvailabePets!
     name: String
     age: Int
 }
 
-enum Animal {
+enum AvailabePets {
     DOG
     CAT
     BADGER
     MAMMOTH
+}
+
+
+
+type Query {
+    pets: [MyPet]
+    petsById(id: Int): [MyPet]
+    petsByFilter(filter: String): [MyPet]
+}
+
+type Mutation {
+    createMyPet(id: Int, type: AvailabePets, name: String, age: Int): MyPet
 }
